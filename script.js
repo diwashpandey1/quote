@@ -1,3 +1,30 @@
+
+const bar = document.getElementById('bar');
+const navBar = document.getElementById('navBar');
+const line1 = document.getElementById('line1');
+const line2 = document.getElementById('line2');
+isCross = false;
+
+bar.addEventListener('click', function(){
+
+  if(isCross){
+    line1.style.transform = 'rotate(0) translate(0,0)';
+    line2.style.transform = 'rotate(0) translate(0,0)';
+    navBar.style.transform = 'scaley(0)';
+    isCross = false;
+  }
+  else{
+    line1.style.transform = 'rotate(45deg) translate(0,10px)';
+    line2.style.transform = 'rotate(-45deg) translate(5px,-10px)';
+    navBar.style.transform = 'scaley(1)';
+    isCross = true;
+  }
+
+});
+
+
+
+
 // Function to fetch and format the time
 function fetchTime() {
   const now = new Date();
