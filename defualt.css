@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comforter+Brush&family=Indie+Flower&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+
+
+
+
+
+:root{
+  --black: #000;
+  --white: #fff;
+  --blue: #4240c1;
+  --red: #e55644;
+
+
+  --font-quote:'Indie Flower' ;
+  --font-writer: 'Caveat';
+  --font-logo: 'Comforter Brush';
+  --font-common: 'Plus Jakarta Sans';
+
+  --f-size-small: .8rem;
+  --f-size-normal: 1rem;
+  --f-size-medium: 1.4rem;
+  --f-size-large: 2rem;
+
+  --radius: .4rem;
+  --circle: 50%;
+
+
+
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-common);
+}
+
+a{
+  text-decoration: none;
+  color: var(--black);
+}

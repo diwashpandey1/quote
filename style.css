@@ -1,0 +1,254 @@
+
+header{
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .logo{
+  font-family: var(--font-logo);
+  font-size: var(--f-size-large);
+}
+
+header nav{
+  display: flex;
+}
+
+header nav a{
+  font-family: var(--font-common);
+}
+
+.toolbar{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.toolbar .time{
+  font-family: var(--font-writer);
+  font-size: var(--f-size-medium);
+}
+
+.toolbar .time .t{
+  font-weight: bold;
+  font-size: calc(var(--f-size-medium) + 2px);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 12em;
+  transition: all ease-in-out .5s;
+  margin-right: -2rem;
+  border: 1px solid;
+}
+
+.search__input:hover, .search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 100;
+  font-family: var(--font-common);
+  color: var(--black);
+}
+
+
+
+.search__button {
+  border: none;
+  margin-top: .1em;
+}
+
+.search__button:hover {
+  cursor: pointer;
+}
+
+.search__icon {
+  height: 1.3em;
+  width: 1.3em;
+  background: none;
+}
+
+
+:root {
+  --arrow-bg: var(--black);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+* {
+  box-sizing: border-box;
+}
+
+/* <select> styles */
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 10rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: var(--black);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+
+  option {
+    color: inherit;
+    background-color: var(--option-bg);
+    border: none;
+  }
+}
+
+main{
+  width: 100%;
+  min-height: 100vh;
+}
+
+.quotes{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.quotes .wrapper{
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.quotes .quote-cards{
+  width: 100% ;
+  max-width: 800px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: start;
+  align-items: start;
+  padding: 20px 0px 20px 40px;
+}
+
+.quotes .quote-cards .quote-card{
+  width: 700px;
+  height: 150px;
+}
+
+.quotes .quote-cards .quote-card .quote{
+  font-family: var(--font-quote);
+  font-size: var(--f-size-medium);
+  font-weight: 600;
+}
+.quotes .quote-cards .quote-card .writer{
+  font-family: var(--font-writer);
+  text-align: right;
+  font-size: var(--f-size-medium);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.quotes .quote-cards .quote-card .tags{
+  display: none;
+}
+
+.quotes .quote-cards .quote-card .response{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quotes .quote-cards .quote-card .response > i{
+  font-size: var(--f-size-medium)
+}
+
+.quotes .quote-cards .quote-card .response > p{
+  cursor: pointer;
+}
+
+footer{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer p{
+  font-family: var(--font-common);
+}
+
+footer button{
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  font-size: var(--f-size-medium);
+  border-radius: var(--circle);
+  background: none;
+}
+
+#message{
+  text-align: center;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header{
+    padding: 0 40px;
+    justify-content: space-between;
+  }
+
+  .toolbar {
+    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    gap: 20px;
+  }
+
+  .quotes .wrapper{
+    padding: 0;
+  }
+
+  .quotes .quote-cards{
+    max-width: 100%;
+    padding: 0 2%;
+  }
+
+  .quotes .quote-cards .quote-card{
+    width: 100%;
+  }
+}

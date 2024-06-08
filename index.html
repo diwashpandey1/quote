@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes</title>
+  <!-- Include Font Awesome -->
+   <link rel="stylesheet" href="defualt.css">
+   <link rel="stylesheet" href="style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <div class="logo" id="logo">
+      <h2>Quote</h2>
+    </div>
+    <nav>
+      <a href="">Who am I ?</a>
+    </nav>
+  </header>
+  <div class="toolbar">
+    <div class="time">
+      <span id="fetchTime"><!--Format: hr:mm:ss,day <br> date month. Year  --></span>
+    </div>
+    <div class="search">
+      <input type="text" class="search__input" placeholder="Search Quotes">
+          <i class="fas fa fa-search"></i>
+  </div>
+    <div class="sort">
+      <select name="" id="">
+        <option value="Default">Sort by</option>
+        <option value="Love">Love</option>
+        <option value="Motivation">Motivation</option>
+        <option value="Sad">Sad</option>
+      </select>
+    </div>
+  </div>
+
+
+<main>
+  <section class="quotes">
+    <div class="wrapper">
+      <div class="quote-cards" id="quoteCard">
+        <!-- Quotes will be inserted here by JavaScript -->
+      </div>
+      <canvas id="canvas" style="display:none;"></canvas>
+      </div>
+  </section>
+  <div id="message" >Nothing found ! 😞🐥</div>
+  <footer>
+    <p>&copy Quotes 2024 | Diwash Pandey</p>
+    <a href="#logo"><button><i class="fas fa fa-arrow-up"></i></button></a>
+  </footer>
+</main>
+<script src="quote.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
