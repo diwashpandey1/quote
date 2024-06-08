@@ -1,5 +1,4 @@
-
-header{
+header {
   width: 100%;
   height: 15vh;
   display: flex;
@@ -7,20 +6,66 @@ header{
   align-items: center;
 }
 
-header .logo{
+header .logo {
   font-family: var(--font-logo);
   font-size: var(--f-size-large);
 }
 
-header nav{
+header nav {
+  width: 50%;
   display: flex;
+  justify-content: space-around;
 }
 
-header nav a{
+header nav a {
   font-family: var(--font-common);
+  font-size: calc(var(--f-size-normal) + 4px);
+  position: relative;
+  z-index: 100;
+  transition: all .5s ease-in-out;
+  padding: 5px;
+  text-align: center;
+  width: 300px;
 }
 
-.toolbar{
+header nav a:hover {
+  color: white;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: var(--black);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: width .4s ease;
+}
+
+header nav a:hover::after{
+  width: 100%;
+}
+
+header  .bar{
+  width: 60px;
+  height: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+header  .bar > div{
+  width: 100%;
+  height: 4px;
+  background: var(--black);
+  transition: transform .4s ease;
+}
+
+
+.toolbar {
   width: 100%;
   height: 10vh;
   display: flex;
@@ -28,12 +73,12 @@ header nav a{
   align-items: center;
 }
 
-.toolbar .time{
+.toolbar .time {
   font-family: var(--font-writer);
   font-size: var(--f-size-medium);
 }
 
-.toolbar .time .t{
+.toolbar .time .t {
   font-weight: bold;
   font-size: calc(var(--f-size-medium) + 2px);
 }
@@ -52,12 +97,13 @@ header nav a{
   padding: 0.7rem 1rem;
   border-radius: 30px;
   width: 12em;
-  transition: all ease-in-out .5s;
+  transition: all ease-in-out 0.5s;
   margin-right: -2rem;
   border: 1px solid;
 }
 
-.search__input:hover, .search__input:focus {
+.search__input:hover,
+.search__input:focus {
   box-shadow: 0 0 1em #00000013;
 }
 
@@ -71,11 +117,9 @@ header nav a{
   color: var(--black);
 }
 
-
-
 .search__button {
   border: none;
-  margin-top: .1em;
+  margin-top: 0.1em;
 }
 
 .search__button:hover {
@@ -87,7 +131,6 @@ header nav a{
   width: 1.3em;
   background: none;
 }
-
 
 :root {
   --arrow-bg: var(--black);
@@ -131,12 +174,13 @@ select {
   }
 }
 
-main{
+main {
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
+  height: auto;
 }
 
-.quotes{
+.quotes {
   width: 100%;
   height: auto;
   display: flex;
@@ -144,15 +188,15 @@ main{
   margin-top: 100px;
 }
 
-.quotes .wrapper{
+.quotes .wrapper {
   width: 100%;
   padding: 0 5%;
   display: flex;
   justify-content: center;
 }
 
-.quotes .quote-cards{
-  width: 100% ;
+.quotes .quote-cards {
+  width: 100%;
   max-width: 800px;
   min-height: 80vh;
   display: flex;
@@ -163,17 +207,17 @@ main{
   padding: 20px 0px 20px 40px;
 }
 
-.quotes .quote-cards .quote-card{
+.quotes .quote-cards .quote-card {
   width: 700px;
   height: 150px;
 }
 
-.quotes .quote-cards .quote-card .quote{
+.quotes .quote-cards .quote-card .quote {
   font-family: var(--font-quote);
   font-size: var(--f-size-medium);
   font-weight: 600;
 }
-.quotes .quote-cards .quote-card .writer{
+.quotes .quote-cards .quote-card .writer {
   font-family: var(--font-writer);
   text-align: right;
   font-size: var(--f-size-medium);
@@ -181,25 +225,25 @@ main{
   font-style: italic;
 }
 
-.quotes .quote-cards .quote-card .tags{
+.quotes .quote-cards .quote-card .tags {
   display: none;
 }
 
-.quotes .quote-cards .quote-card .response{
+.quotes .quote-cards .quote-card .response {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.quotes .quote-cards .quote-card .response > i{
-  font-size: var(--f-size-medium)
+.quotes .quote-cards .quote-card .response > i {
+  font-size: var(--f-size-medium);
 }
 
-.quotes .quote-cards .quote-card .response > p{
+.quotes .quote-cards .quote-card .response > p {
   cursor: pointer;
 }
 
-footer{
+footer {
   width: 100%;
   height: 10vh;
   display: flex;
@@ -207,11 +251,11 @@ footer{
   align-items: center;
 }
 
-footer p{
+footer p {
   font-family: var(--font-common);
 }
 
-footer button{
+footer button {
   padding: 10px;
   height: 50px;
   width: 50px;
@@ -220,16 +264,37 @@ footer button{
   background: none;
 }
 
-#message{
+#message {
   text-align: center;
   display: none;
 }
 
 @media screen and (max-width: 768px) {
-  header{
+  header {
     padding: 0 40px;
     justify-content: space-between;
+    position: relative;
   }
+
+  header nav{
+    position: absolute;
+    right: 30%;
+    width: auto;
+    flex-direction: column;
+    transform: scaley(0);
+    transition: transform .4s ease;
+    transform-origin: top;
+    background: white;
+  }
+
+  header .bar{
+    display: flex;
+  }
+
+  header nav a{
+    width: auto;
+  }
+
 
   .toolbar {
     padding: 0 20px;
@@ -239,16 +304,138 @@ footer button{
     gap: 20px;
   }
 
-  .quotes .wrapper{
+  .quotes .wrapper {
     padding: 0;
   }
 
-  .quotes .quote-cards{
+  .quotes .quote-cards {
     max-width: 100%;
     padding: 0 2%;
   }
 
-  .quotes .quote-cards .quote-card{
+  .quotes .quote-cards .quote-card {
     width: 100%;
+  }
+}
+
+
+
+.form {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 2rem;
+  width: 100%;
+  height: 80vh;
+  border-radius: var(--radius);
+}
+
+.wrapper {
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form .instruction p {
+  font-family: var(--font-writer);
+  font-size: var(--f-size-medium);
+  margin-bottom: 1rem;
+}
+
+.form .instruction ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  font-family: var(--font-quote);
+  font-size: var(--f-size-medium);
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form input,
+.form textarea {
+  font-family: var(--font-common);
+  font-size: var(--f-size-normal);
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid var(--white);
+  border-radius: var(--radius);
+  background-color: var(--black);
+  color: var(--white);
+  resize: none;
+  outline: none;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: var(--white);
+}
+
+
+.form form  button {
+  font-family: var(--font-common);
+  font-size: var(--f-size-normal);
+  padding: 0.8rem;
+  background-color: var(--white);
+  color: var(--black);
+  border:2px solid var(--black) ;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 2px solid var(black);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form form  button:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.form  button {
+  font-family: var(--font-common);
+  font-size: var(--f-size-normal);
+  padding: 0.8rem;
+  background-color: var(--white);
+  color: var(--black);
+  border:2px solid var(--black) ;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 2px solid var(black);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form  button:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .form {
+      padding: 1rem;
+  }
+
+  .wrapper {
+      padding: 0.5rem;
+  }
+
+  .form input,
+  .form textarea {
+      font-size: var(--f-size-small);
+      padding: 0.6rem;
+  }
+
+  .form form button {
+      font-size: var(--f-size-small);
+      padding: 0.6rem;
+  }
+
+  .form .instruction p {
+    font-size: var(--f-size-medium);
   }
 }
